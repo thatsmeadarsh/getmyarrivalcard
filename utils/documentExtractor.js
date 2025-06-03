@@ -1,9 +1,9 @@
 const { DocumentAnalysisClient } = require("@azure/ai-form-recognizer");
 const { AzureKeyCredential } = require("@azure/core-auth");
 
-// Azure Document Intelligence configuration
-const endpoint = "https://ai-itenary-reader.cognitiveservices.azure.com/";
-const apiKey = "2IbqxATejHh6h8WfyzxzXhaueDD9UTGXF0AY5RINAIbBAwN78Dk9JQQJ99BEAC3pKaRXJ3w3AAALACOGAdSO";
+// Azure Document Intelligence configuration from environment variables
+const endpoint = process.env.DOCUMENT_INTELLIGENCE_ENDPOINT;
+const apiKey = process.env.DOCUMENT_INTELLIGENCE_KEY;
 
 // Extract data from PDF
 const extractItineraryData = async (fileBuffer) => {
